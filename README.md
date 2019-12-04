@@ -1,30 +1,25 @@
-# better-keys
+# Kenum 
 
 `npm install`
 
 `npm run dev` will just run and console.log() the outcome.
 
+```javascript
+import kenum from 'kenum'
 
-I have 2 test cases setup inside of index.js
-
-the idea is that i want the returned object o have a KEY and VALUE of the same string
-
-
-so that you can simply do something like:
-```
-const actionTypes = keys`
-  ONE
-  TWO
-  THREE
-  ${FOUR}
+const actionType = kenum.appName`
+REQ
+RES
+ERR
 `
 ```
 
-and it will just return an object like:
+output:
 ```
-{
-  ONE: 'ONE',
-  TWO: 'TWO'
+actionType = {
+  REQ: 'appName/REQ',
+  RES: 'appName/RES',
+  ERR: 'appname/ERR'
 }
 ```
 
