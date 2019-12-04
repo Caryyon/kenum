@@ -1,7 +1,6 @@
 const kenum = new Proxy({}, {
-  get: (obj, prop) => (strings, ...expressions) => strings
-		.concat(expressions)
-		.flatMap(x => x.split(/\s+/))
+	get: (obj, prop) => ([string]) => string
+		.split(/[\n\s]+/)
 		.filter(Boolean)
 		.reduce((obj, key) => (obj[key] = `${prop}/${key}`, obj), {})
 })
