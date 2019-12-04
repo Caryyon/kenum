@@ -1,29 +1,17 @@
-const keys = (arr1, ...arr2) => string => {
-  let ret = {}
-  const newArr = arr1.map(item => item.trim().replace(/(\s)+|(\n)+/ig, " ").split(' '))
-  const reduced  = newArr.reduce((acc, val) => acc.concat(val), []).filter(Boolean)
- 
-  const final = [...reduced, ...arr2]
-  final.forEach(item => {
-    ret[item] = string ? `${string}/${item}` : item
-  })
+const kenum = new Proxy({}, {
+	get: (obj, prop) => (strings, ...expressions) => strings
+		.concat(expressions)
+		.flatMap(x => x.split(/\s+/))
+		.filter(Boolean)
+		.reduce((obj, key) => (obj[key] = `${prop}/${key}`, obj), {})
+})
 
-  console.log(ret)
-  return ret
-}
+// THESE ARE TESTS CASES
+// TODO: REMOVE THESE
+const test1 = kenum.TEST`FOO BAR`
+const test2 = kenum.TEST2`FOO BAR BAZ`
 
-const test1 = 'TEST1'
-const test2 = 'TEST2'
+console.log(test1)
+console.log(test2)
 
-keys`
-  THIS
-  IS_TACO
-  SOME
-  ${test1}
-  ${test2}
-  TEXT
-`()
-
-keys`SECOND TEST ${test1}`('appName')
-
-module.exports = keys
+module.exports = kenum
