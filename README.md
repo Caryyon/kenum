@@ -1,8 +1,10 @@
 # Kenum 
 
-`npm install`
+### Key + Enum = kenum
 
-`npm run dev` will just run and console.log() the outcome.
+This is a helper to creating things like keys, actionTypes, or enum objects. 
+
+### Usage
 
 ```javascript
 import kenum from 'kenum'
