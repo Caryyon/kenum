@@ -4,11 +4,6 @@
 
 This is a helper to creating things like keys, actionTypes, or enum objects.
 
-
-THIS IS NOT ON NPM YET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-clone and link for now
-
-
 ### Usage
 
 ```javascript
