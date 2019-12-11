@@ -41,9 +41,9 @@ describe('kenum', () => {
     `
     expect(result).toEqual({
       BAR: 'FOO/BAR',
-      VAR: 'FOO/VAR',
       PIE: 'FOO/PIE',
-      YUM: 'FOO/YUM'
+      YUM: 'FOO/YUM',
+      VAR: 'FOO/VAR'
     })
   })
   it('should work with inserted variables', () => {
@@ -58,10 +58,10 @@ describe('kenum', () => {
     `
     expect(result).toEqual({
       BAR: 'FOO/BAR',
-      VAR: 'FOO/VAR',
       PIE: 'FOO/PIE',
-      LET: 'FOO/LET',
-      YUM: 'FOO/YUM'
+      YUM: 'FOO/YUM',
+      VAR: 'FOO/VAR',
+      LET: 'FOO/LET'
     })
   })
 })
