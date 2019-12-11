@@ -25,3 +25,30 @@ actionType = {
 }
 ```
 
+### With variables
+
+```javascript
+import kenum from 'kenum'
+
+const FOO = 'FOO'
+const BAR = 'BAR'
+
+const actionType = kenum.appName`
+  REQ
+  ${FOO}
+  RES
+  ${BAR}
+  ERR
+`
+```
+
+output:
+```
+actionType = {
+  REQ: 'appName/REQ',
+  RES: 'appName/RES',
+  ERR: 'appName/ERR',
+  FOO: 'appName/FOO',
+  BAR: 'appName/BAR'
+}
+```
