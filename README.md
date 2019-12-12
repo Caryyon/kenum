@@ -4,6 +4,10 @@
 
 This is a helper to creating things like keys, actionTypes, or enum objects.
 
+### Installing
+
+`npm install kenum`
+
 ### Usage
 
 ```javascript
