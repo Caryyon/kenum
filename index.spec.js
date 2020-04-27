@@ -1,4 +1,3 @@
-
 const kenum = require('./index')
 
 describe('kenum', () => {
@@ -11,7 +10,7 @@ describe('kenum', () => {
     expect(result).toEqual({
       BAR: 'FOO/BAR',
       PIE: 'FOO/PIE',
-      YUM: 'FOO/YUM'
+      YUM: 'FOO/YUM',
     })
   })
 
@@ -28,7 +27,7 @@ describe('kenum', () => {
     expect(result).toEqual({
       BAR: 'FOO/BAR',
       PIE: 'FOO/PIE',
-      YUM: 'FOO/YUM'
+      YUM: 'FOO/YUM',
     })
   })
   it('should work with a inserted variable', () => {
@@ -43,7 +42,7 @@ describe('kenum', () => {
       BAR: 'FOO/BAR',
       PIE: 'FOO/PIE',
       YUM: 'FOO/YUM',
-      VAR: 'FOO/VAR'
+      VAR: 'FOO/VAR',
     })
   })
   it('should work with inserted variables', () => {
@@ -61,7 +60,19 @@ describe('kenum', () => {
       PIE: 'FOO/PIE',
       YUM: 'FOO/YUM',
       VAR: 'FOO/VAR',
-      LET: 'FOO/LET'
+      LET: 'FOO/LET',
+    })
+  })
+  it('should work with inserted variables on the same line as strings example:(FOO${BAR})', () => {
+    const sport = 'SPORTS'
+    const result = kenum.FOO`${sport}BALLS
+      FOOTBALL
+      BALL${sport}
+    `
+    expect(result).toEqual({
+      SPORTSBALLS: 'FOO/SPORTSBALLS',
+      FOOTBALL: 'FOO/FOOTBALL',
+      BALLSPORTS: 'FOO/BALLSPORTS',
     })
   })
 })
