@@ -1,19 +1,30 @@
 {
   "name": "kenum",
   "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A utility for creating enum-like objects with namespaced keys using template literals",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "node index.js",
-    "test": "jest"
+    "build": "tsc",
+    "dev": "ts-node examples/demo.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rm -rf dist",
+    "prepare": "yarn build",
+    "demo": "ts-node examples/demo.ts"
   },
   "author": "Cary Wolff",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.0.1"
+    "@types/jest": "^28.0.0",
+    "@types/node": "^16.0.0",
+    "jest": "^28.0.0",
+    "ts-jest": "^28.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^4.8.0"
   },
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "lodash.flatten": "^4.4.0"
-  }
+  "files": [
+    "dist/"
+  ]
 }
