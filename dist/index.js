@@ -98,4 +98,6 @@ const kenum = new Proxy({}, {
     }
 });
 exports.default = kenum;
+module.exports = kenum;
+module.exports.default = kenum;
 //# sourceMappingURL=index.js.map

@@ -1,11 +1,11 @@
 {
   "name": "kenum",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A utility for creating enum-like objects with namespaced keys using template literals",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node scripts/fix-commonjs.js",
     "dev": "ts-node examples/demo.ts",
     "test": "jest",
     "test:watch": "jest --watch",
